@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #f4f4f4;
+    --color-primary: #5b5b71;
+    --color-secondary: #7a7a7a;
+    --color-muted: #9e9eae;
+    --color-border: #dedede;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+  }
+
+  ::selection {
+    background-color: #dedede;
+    color: var(--color-primary);
+  }
+}
