@@ -5,14 +5,14 @@ import Image from "next/image";
 
 const kiwiImages = ["/kiwi-1.jpg", "/kiwi-2.jpg", "/kiwi-3.jpg"];
 
-const CARD_W = 112; // w-28
-const CARD_H = 160; // h-40
+const CARD_W = 128; // w-32
+const CARD_H = 176; // h-44
 const MARGIN = 12;
 
 const cards = [
-  { rotate: -22, x: -110, y: -170 },
-  { rotate: 0,   x: -56,  y: -190 },
-  { rotate: 22,  x: -2,   y: -170 },
+  { rotate: -22, x: -126, y: -186 },
+  { rotate: 0,   x: -64,  y: -208 },
+  { rotate: 22,  x: -2,   y: -186 },
 ];
 
 function clampX(anchorX: number): number {
@@ -116,7 +116,7 @@ export default function KiwiHover({ children }: { children: React.ReactNode }) {
         {cards.map((card, i) => (
           <div
             key={i}
-            className="absolute w-28 h-40 rounded-xl overflow-hidden shadow-xl border border-[var(--color-border)]"
+            className="absolute w-32 h-44 rounded-xl overflow-hidden shadow-xl border border-[var(--color-border)]"
             style={cardStyle(card)}
           >
             <Image src={kiwiImages[i]} alt="kiwi" fill className="object-cover" priority />

@@ -26,7 +26,7 @@ export const projects: Project[] = [
     tech: ["react native", "postgresql", "supabase"],
   },
   {
-    name: "machine learning stock tracker",
+    name: "machine learning stock trader",
     period: "jun – aug 2024",
     status: "Complete",
     description:

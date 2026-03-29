@@ -3,7 +3,7 @@ import KiwiHover from "@/components/KiwiHover";
 export default function About() {
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-[var(--color-primary)]">about</h1>
+      <h1 className="text-3xl font-bold text-[var(--color-primary)]">about</h1>
 
       <p className="text-[var(--color-secondary)] leading-relaxed">
         i&apos;m currently a software engineer based in houston, completing a

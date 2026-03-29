@@ -10,11 +10,11 @@ export default function Nav() {
 
   return (
     <nav className="flex items-baseline justify-between">
-      <span className="text-sm font-medium tracking-wide text-[var(--color-primary)]">
+      <span className="text-base font-medium tracking-wide text-[var(--color-primary)]">
         edward wang
       </span>
 
-      <div className="flex gap-6 text-sm text-[var(--color-muted)]">
+      <div className="flex gap-6 text-base text-[var(--color-muted)]">
         {navLinks.map(({ href, label }) => (
           <Link
             key={href}
