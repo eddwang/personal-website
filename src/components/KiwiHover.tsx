@@ -108,22 +108,21 @@ export default function KiwiHover({ children }: { children: React.ReactNode }) {
         {children}
       </span>
 
-      {visible && (
-        <div
-          className="fixed pointer-events-none"
-          style={{ left: pos.x, top: pos.y, zIndex: 9999 }}
-        >
-          {cards.map((card, i) => (
-            <div
-              key={i}
-              className="absolute w-28 h-40 rounded-xl overflow-hidden shadow-xl border border-[var(--color-border)]"
-              style={cardStyle(card)}
-            >
-              <Image src={kiwiImages[i]} alt="kiwi" fill className="object-cover" />
-            </div>
-          ))}
-        </div>
-      )}
+      <div
+        className="fixed pointer-events-none"
+        style={{ left: pos.x, top: pos.y, zIndex: 9999, opacity: visible ? 1 : 0 }}
+        aria-hidden={!visible}
+      >
+        {cards.map((card, i) => (
+          <div
+            key={i}
+            className="absolute w-28 h-40 rounded-xl overflow-hidden shadow-xl border border-[var(--color-border)]"
+            style={cardStyle(card)}
+          >
+            <Image src={kiwiImages[i]} alt="kiwi" fill className="object-cover" priority />
+          </div>
+        ))}
+      </div>
     </>
   );
 }
