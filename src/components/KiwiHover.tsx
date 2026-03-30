@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
-const kiwiImages = ["/kiwi-1.jpg", "/kiwi-2.jpg", "/kiwi-3.jpg"];
+const kiwiImages = ["/kiwi-1.webp", "/kiwi-2.webp", "/kiwi-3.webp"];
 
 const CARD_W = 128; // w-32
 const CARD_H = 176; // h-44
@@ -36,6 +36,20 @@ export default function KiwiHover({ children }: { children: React.ReactNode }) {
   const [pos, setPos] = useState({ x: 0, y: 0, flipY: false });
   const spanRef = useRef<HTMLSpanElement>(null);
   const isTouch = useRef(false);
+  const preloaded = useRef(false);
+
+  // Preload images on first mount so they're cached before the user taps
+  useEffect(() => {
+    if (preloaded.current) return;
+    preloaded.current = true;
+    kiwiImages.forEach((src) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = src;
+      document.head.appendChild(link);
+    });
+  }, []);
 
   // Click-outside to dismiss on mobile
   useEffect(() => {
